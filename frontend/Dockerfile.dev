@@ -1,0 +1,11 @@
+FROM node
+
+WORKDIR /app/mofu_com
+
+COPY /mofu_com/package.json /app/mofu_com
+
+RUN npm install
+
+COPY ./ /app
+
+CMD [ "npm", "run", "dev" ]
