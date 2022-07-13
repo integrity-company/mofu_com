@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { reactive } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const title = "MOFU";
 
 const states = reactive({
@@ -10,6 +12,9 @@ const states = reactive({
 const goToNextPage = () => {
   console.log("ページ遷移");
   states.imgPosition = !states.imgPosition ? "ml-reverse-100" : "";
+  setTimeout(() => {
+    router.push("/about");
+  }, 1500);
 };
 </script>
 
@@ -26,7 +31,7 @@ const goToNextPage = () => {
 
 <style lang="scss" scoped>
 .container {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   text-align: center;
   display: flex;
@@ -34,6 +39,9 @@ const goToNextPage = () => {
   justify-content: center;
   align-items: center;
   color: #ff880037;
+}
+.title {
+  // z-index: 2;
 }
 .title button {
   font-size: 80px;
@@ -56,7 +64,7 @@ const goToNextPage = () => {
 .top-image {
   position: absolute;
   filter: brightness(107%) opacity(80%);
-  width: 70vw;
+  width: 50vw;
   z-index: -1;
   & img {
     width: 100%;
@@ -70,15 +78,15 @@ const goToNextPage = () => {
 @keyframes AnimationName {
   0% {
     background-position: 0% 50%;
-    letter-spacing: 2.25rem;
+    // letter-spacing: 2.25rem;
   }
   50% {
     background-position: 100% 50%;
-    letter-spacing: 0.25rem;
+    // letter-spacing: 0.25rem;
   }
   100% {
     background-position: 0% 50%;
-    letter-spacing: 2.25rem;
+    // letter-spacing: 2.25rem;
   }
 }
 @keyframes FadeoutImage {
