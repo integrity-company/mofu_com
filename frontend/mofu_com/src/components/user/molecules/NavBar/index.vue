@@ -3,7 +3,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">MOFU</a>
+      <router-link to="/" class="navbar-brand" href="#">MOFU</router-link>
       <button
         class="navbar-toggler"
         type="button"
