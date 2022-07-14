@@ -5,6 +5,7 @@ import About from "../../../components/user/pages/About/index.vue";
 import ProductList from "../../../components/user/pages/ProductList/index.vue";
 import Cart from "../../../components/user/pages/Cart/index.vue";
 import VideoLesson from "../../../components/user/pages/VideoLesson/index.vue";
+import Blog from "../../../components/user/pages/Blog/index.vue";
 
 const routes = [
   {
@@ -26,6 +27,10 @@ const routes = [
   {
     path: "/video_lesson",
     component: VideoLesson,
+  },
+  {
+    path: "/blog",
+    component: Blog,
   },
 ];
 
