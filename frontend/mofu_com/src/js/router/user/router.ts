@@ -4,6 +4,7 @@ import TopPage from "../../../components/user/pages/TopPage/index.vue";
 import About from "../../../components/user/pages/About/index.vue";
 import ProductList from "../../../components/user/pages/ProductList/index.vue";
 import Cart from "../../../components/user/pages/Cart/index.vue";
+import VideoLesson from "../../../components/user/pages/VideoLesson/index.vue";
 
 const routes = [
   {
@@ -21,6 +22,10 @@ const routes = [
   {
     path: "/cart",
     component: Cart,
+  },
+  {
+    path: "/video_lesson",
+    component: VideoLesson,
   },
 ];
 
