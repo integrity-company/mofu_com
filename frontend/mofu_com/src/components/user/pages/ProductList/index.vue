@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavBar from "../../molecules/NavBar/index.vue";
 import ProductListContent from "../../organisms/ProductListContents/index.vue";
-import { sampleData } from "./sample_data";
+import { sampleData } from "../../../../js/data/sample_data";
 </script>
 
 <template>
