@@ -5,6 +5,7 @@ export const sampleData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat dolore nihil minus, officia distinctio doloremque delectus quam mollitia. A, debitis.",
     url: "../../../../../public/sample_image/sample1.png",
+    price: 30000,
     lastUpdate: 3,
   },
   {
@@ -13,6 +14,7 @@ export const sampleData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat dolore nihil minus, officia distinctio doloremque delectus quam mollitia. A, debitis.",
     url: "../../../../../public/sample_image/sample2.jpeg",
+    price: 25000,
     lastUpdate: 1,
   },
   {
@@ -21,6 +23,7 @@ export const sampleData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat dolore nihil minus, officia distinctio doloremque delectus quam mollitia. A, debitis.",
     url: "../../../../../public/sample_image/sample3.jpeg",
+    price: 70000,
     lastUpdate: 2,
   },
   {
@@ -29,6 +32,7 @@ export const sampleData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat dolore nihil minus, officia distinctio doloremque delectus quam mollitia. A, debitis.",
     url: "../../../../../public/sample_image/sample4.jpeg",
+    price: 85000,
     lastUpdate: 12,
   },
   {
@@ -37,6 +41,7 @@ export const sampleData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat dolore nihil minus, officia distinctio doloremque delectus quam mollitia. A, debitis.",
     url: "../../../../../public/sample_image/sample5.jpeg",
+    price: 12000,
     lastUpdate: 5,
   },
   {
@@ -45,6 +50,7 @@ export const sampleData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat dolore nihil minus, officia distinctio doloremque delectus quam mollitia. A, debitis.",
     url: "../../../../../public/sample_image/sample6.jpeg",
+    price: 28400,
     lastUpdate: 10,
   },
   {
@@ -53,6 +59,7 @@ export const sampleData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat dolore nihil minus, officia distinctio doloremque delectus quam mollitia. A, debitis.",
     url: "../../../../../public/sample_image/sample7.jpeg",
+    price: 90000,
     lastUpdate: 8,
   },
 ];

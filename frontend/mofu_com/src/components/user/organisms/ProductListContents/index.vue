@@ -21,7 +21,9 @@ const goToItemDetail = (id) => {
 </script>
 
 <template>
-  <BreadCrumb />
+  <div class="mt-5">
+    <Breadcrumb />
+  </div>
   <div class="notification">
     <div class="accordion" id="accordionExample">
       <Accordion :hasShow="true">
