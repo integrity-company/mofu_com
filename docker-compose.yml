@@ -9,7 +9,7 @@ services:
       - /app/mofu_com/node_modules
       - ./frontend:/app
     ports:
-      - "3000:3000"
+      - 3000:3000
 
   backend:
     build:
@@ -20,4 +20,14 @@ services:
       - /app/node_modules
       - ./backend:/app
     ports:
-      - "8080:8080"
+      - 8080:8080
+
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/default.conf
