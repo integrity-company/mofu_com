@@ -1,9 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useNavBarActions } from ".";
+
+const actions = useNavBarActions();
+</script>
 
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <router-link to="/" class="navbar-brand" href="#">MOFU</router-link>
+      <router-link :to="actions.goToTop()" class="navbar-brand" href="#"
+        >MOFU</router-link
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -18,26 +24,37 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/"
+            <router-link
+              class="nav-link active"
+              aria-current="page"
+              :to="actions.goToTop()"
               >Home</router-link
             >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/about">About</router-link>
+            <router-link class="nav-link" :to="actions.goToAbout()"
+              >About</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/product_list"
+            <router-link class="nav-link" :to="actions.goToProducts()"
               >Products</router-link
             >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/cart">cart</router-link>
+            <router-link class="nav-link" :to="actions.goToCart()"
+              >cart</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/video_lesson">Video</router-link>
+            <router-link class="nav-link" :to="actions.goToVideoLesson()"
+              >Video</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/blog">Blog</router-link>
+            <router-link class="nav-link" :to="actions.goToBlog()"
+              >Blog</router-link
+            >
           </li>
           <li class="nav-item dropdown">
             <a

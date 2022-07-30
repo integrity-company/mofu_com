@@ -7,34 +7,44 @@ import Cart from "../../../components/user/pages/Cart/index.vue";
 import VideoLesson from "../../../components/user/pages/VideoLesson/index.vue";
 import Blog from "../../../components/user/pages/Blog/index.vue";
 import ItemDetail from "../../../components/user/pages/ItemDetail/index.vue";
+import { constants } from "../../constants";
+
+const { PATH, ROUTE_NAME } = constants.LOCATION;
 
 const routes = [
   {
-    path: "/",
+    path: PATH.TOP,
+    name: ROUTE_NAME.TOP,
     component: TopPage,
   },
   {
-    path: "/about",
+    path: PATH.ABOUT,
+    name: ROUTE_NAME.ABOUT,
     component: About,
   },
   {
-    path: "/product_list",
+    path: PATH.PRODUCTS,
+    name: ROUTE_NAME.PRODUCTS,
     component: ProductList,
   },
   {
-    path: "/product_list/item_detail/:id",
+    path: PATH.ITEM_DETAIL,
+    name: ROUTE_NAME.ITEM_DETAIL,
     component: ItemDetail,
   },
   {
-    path: "/cart",
+    path: PATH.CART,
+    name: ROUTE_NAME.CART,
     component: Cart,
   },
   {
-    path: "/video_lesson",
+    path: PATH.VIDEO_LESSON,
+    name: ROUTE_NAME.VIDEO_LESSON,
     component: VideoLesson,
   },
   {
-    path: "/blog",
+    path: PATH.BLOG,
+    name: ROUTE_NAME.BLOG,
     component: Blog,
   },
 ];
