@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useNavBarActions } from ".";
+import { useNavBarActions } from '.'
 
-const actions = useNavBarActions();
+const actions = useNavBarActions()
 </script>
 
 <template>

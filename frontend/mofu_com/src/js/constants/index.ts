@@ -2,35 +2,35 @@ export const constants = {
   LOCATION: {
     PATH: {
       /** top page*/
-      TOP: "/",
+      TOP: '/',
       /** about page*/
-      ABOUT: "/about",
+      ABOUT: '/about',
       /** product list page*/
-      PRODUCTS: "/products",
+      PRODUCTS: '/products',
       /** item detail page*/
-      ITEM_DETAIL: "/products/detail/:id",
+      ITEM_DETAIL: '/products/detail/:id',
       /** cart page*/
-      CART: "/cart",
+      CART: '/cart',
       /** video lesson page*/
-      VIDEO_LESSON: "/video_lesson",
+      VIDEO_LESSON: '/video_lesson',
       /** blog page*/
-      BLOG: "/blog",
+      BLOG: '/blog',
     },
     ROUTE_NAME: {
       /** top page*/
-      TOP: "top",
+      TOP: 'top',
       /** about page*/
-      ABOUT: "about",
+      ABOUT: 'about',
       /** product list page*/
-      PRODUCTS: "productList",
+      PRODUCTS: 'productList',
       /** item detail page*/
-      ITEM_DETAIL: "productDetail",
+      ITEM_DETAIL: 'productDetail',
       /** cart page*/
-      CART: "cart",
+      CART: 'cart',
       /** video lesson page*/
-      VIDEO_LESSON: "videoLesson",
+      VIDEO_LESSON: 'videoLesson',
       /** blog page*/
-      BLOG: "blog",
+      BLOG: 'blog',
     },
   },
-} as const;
+} as const
