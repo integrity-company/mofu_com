@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ProductList } from "../../../type/user/general/products";
+import { ProductList } from "../../type/user/general/products";
 
 const PATH = {
   SAMPLE_DATA: "/api",

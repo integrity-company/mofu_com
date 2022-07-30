@@ -1,4 +1,4 @@
-import { ProductListApi } from "../../api/user/ProductListApi";
+import { ProductListApi } from "../../api/ProductListApi";
 import { ProductList } from "../../type/user/general/products";
 import { Ref, ref } from "vue";
 
