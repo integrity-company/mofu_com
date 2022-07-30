@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { reactive } from "vue";
-import { useRouter } from "vue-router";
+import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
 
-const router = useRouter();
-const title = "MOFU";
+const router = useRouter()
+const title = 'MOFU'
 
 const states = reactive({
-  imgPosition: "",
-  textPosition: "",
-});
+  imgPosition: '',
+  textPosition: '',
+})
 const goToNextPage = () => {
-  console.log("ページ遷移");
-  states.imgPosition = !states.imgPosition ? "ml-reverse-100" : "";
+  console.log('ページ遷移')
+  states.imgPosition = !states.imgPosition ? 'ml-reverse-100' : ''
   setTimeout(() => {
-    router.push("/about");
-  }, 1500);
-};
+    router.push('/about')
+  }, 1500)
+}
 </script>
 
 <template>
@@ -58,7 +58,7 @@ const goToNextPage = () => {
   -webkit-background-clip: text;
   background-size: 400% 400%;
   letter-spacing: 0.25rem;
-  font-family: "Spartan", sans-serif;
+  font-family: 'Spartan', sans-serif;
   animation: AnimationName 10s ease infinite;
 }
 .top-image {

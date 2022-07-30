@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Breadcrumb from "../../molecules/Breadcrumb/index.vue";
-import ItemInfomation from "../ItemInfomation/index.vue";
+import Breadcrumb from '../../molecules/Breadcrumb/index.vue'
+import ItemInfomation from '../ItemInfomation/index.vue'
 
 const props = defineProps({
   data: Object,
-});
+})
 </script>
 
 <template>

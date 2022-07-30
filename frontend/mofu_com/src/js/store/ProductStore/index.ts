@@ -1,16 +1,16 @@
-import { ProductListApi } from "../../api/ProductListApi";
-import { ProductList } from "../../type/user/general/products";
-import { Ref, ref } from "vue";
+import { ProductListApi } from '../../api/ProductListApi'
+import { ProductList } from '../../type/user/general/products'
+import { Ref, ref } from 'vue'
 
-type ProductListDetail = ProductList[];
+type ProductListDetail = ProductList[]
 
 export class ProductStore {
-  private api: ProductListApi;
-  private _data: Ref<ProductListDetail>;
+  private api: ProductListApi
+  private _data: Ref<ProductListDetail>
 
   constructor() {
-    this.api = new ProductListApi();
-    this._data = ref<ProductListDetail>([]);
+    this.api = new ProductListApi()
+    this._data = ref<ProductListDetail>([])
   }
 
   /**
@@ -18,7 +18,7 @@ export class ProductStore {
    * @returns 商品リスト
    */
   public getProductList() {
-    return this._data.value;
+    return this._data.value
   }
 
   /**
@@ -28,11 +28,10 @@ export class ProductStore {
     await this.api
       .fetchProductList()
       .then((data) => {
-        this._data.value = data;
-        console.log("store data : ", data);
+        this._data.value = data
       })
       .catch((error) => {
-        console.log(error);
-      });
+        console.log(error)
+      })
   }
 }
