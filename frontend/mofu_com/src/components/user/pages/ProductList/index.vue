@@ -1,7 +1,16 @@
 <script setup lang="ts">
+import { inject, onBeforeMount, onMounted, reactive } from "vue";
 import NavBar from "../../molecules/NavBar/index.vue";
 import ProductListContent from "../../organisms/ProductListContents/index.vue";
-import { sampleData } from "../../../../js/data/sample_data";
+import { useProductListStates, useProductListActions } from ".";
+
+import { ProductStore } from "../../../../js/store/ProductStore";
+import { productStoreKey } from "../../../../js/injectionKeys/user/general/index";
+
+const productStore = inject<ProductStore>(productStoreKey) as ProductStore;
+
+const state = useProductListStates();
+const actions = useProductListActions(state, productStore);
 </script>
 
 <template>
@@ -12,7 +21,7 @@ import { sampleData } from "../../../../js/data/sample_data";
     <div class="page-title">
       <h2>商品リストページ</h2>
     </div>
-    <ProductListContent :data="sampleData" />
+    <ProductListContent :data="state.productList" />
   </div>
 </template>
 
