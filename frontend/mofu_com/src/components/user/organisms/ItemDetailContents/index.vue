@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import Breadcrumb from '../../molecules/Breadcrumb/index.vue'
 import ItemInfomation from '../ItemInfomation/index.vue'
+import { ProductList } from '../../../../js/type/user/general/products'
+import { PropType } from 'vue'
 
 const props = defineProps({
-  data: Object,
+  data: {
+    type: Object as PropType<ProductList>,
+    reuqired: true,
+  },
 })
 </script>
 

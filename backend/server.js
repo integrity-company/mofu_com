@@ -3,6 +3,7 @@ const app = express();
 
 // 以下mongoDB接続
 const MongoClient = require("mongodb").MongoClient;
+ObjectID = require("mongodb").ObjectID;
 require("dotenv").config();
 const uri = process.env.MONGO_DB_HOST;
 // const uri =
@@ -45,6 +46,20 @@ MongoClient.connect(uri, function (dbConnectErr, client) {
         res.header("Content-Type", "application/json; charset=utf-8");
         res.send(findRes);
       });
+  });
+
+  app.get("/api/products/item/detail/:id", (req, res) => {
+    console.log("req.params.id : ", req.params.id);
+    db.collection("products").findOne(
+      {
+        _id: ObjectID(req.params.id),
+      },
+      function (findErr, findRes) {
+        console.log("findRes : ", findRes);
+        res.header("Content-Type", "application/json; charset=utf-8");
+        res.send(findRes);
+      }
+    );
   });
 
   app.listen(PORT, HOST);

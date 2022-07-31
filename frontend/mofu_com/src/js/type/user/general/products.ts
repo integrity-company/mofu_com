@@ -1,7 +1,8 @@
 export type ProductList = {
-  id: number
+  _id: string
   title: string
   description: string
+  url: string
   price: number
   lastUpdate: number
 }

@@ -1,17 +1,21 @@
 <script setup lang="ts">
-import { ref, useCssModule } from "vue";
+import { PropType, ref, useCssModule } from 'vue'
+import { ProductList } from '../../../../js/type/user/general/products'
 
 const props = defineProps({
-  data: Object,
-});
-const css = useCssModule("css");
-const imgClass = ref<string>(css.cus);
+  data: {
+    type: Object as PropType<ProductList>,
+    required: true,
+  },
+})
+const css = useCssModule('css')
+const imgClass = ref<string>(css.cus)
 </script>
 
 <style lang="scss" module="css" scoped>
 .cus {
   height: 200px;
-  background-image: url(imgUrl);
+  background-image: url(props.data.url);
   border: 1px solid red;
 }
 </style>
