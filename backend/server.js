@@ -3,8 +3,10 @@ const app = express();
 
 // 以下mongoDB接続
 const MongoClient = require("mongodb").MongoClient;
-const uri =
-  "mongodb+srv://admin:romantic17@cluster0.8hbkz.mongodb.net/?retryWrites=true&w=majority";
+require("dotenv").config();
+const uri = process.env.MONGO_DB_HOST;
+// const uri =
+//   "mongodb+srv://admin:romantic17@cluster0.8hbkz.mongodb.net/?retryWrites=true&w=majority";
 
 const sampleData = {
   title: "花誕生123",
@@ -33,10 +35,10 @@ MongoClient.connect(uri, function (dbConnectErr, client) {
   //   }
   // );
 
-  const PORT = 8080;
-  const HOST = "0.0.0.0";
+  const PORT = process.env.SERVER_PORT;
+  const HOST = process.env.SERVER_HOST;
 
-  app.get("/api", (req, res) => {
+  app.get("/api/products", (req, res) => {
     db.collection("products")
       .find()
       .toArray(function (findErr, findRes) {
