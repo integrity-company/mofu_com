@@ -1,29 +1,28 @@
 <script setup lang="ts">
-import ProductItem from "../../molecules/ProductItem/index.vue";
-import BreadCrumb from "../../molecules/Breadcrumb/index.vue";
-import Accordion from "../../molecules/Accordion/index.vue";
-import { useRouter } from "vue-router";
+import ProductItem from '../../molecules/ProductItem/index.vue'
+import Accordion from '../../molecules/Accordion/index.vue'
+import { useRouter } from 'vue-router'
+import { PropType } from 'vue'
 
 type ProductItemProps = {
-  title: string;
-  description: string;
-  url: string;
-  lastUpdate: number;
-}[];
+  _id: string
+  title: string
+  description: string
+  url: string
+  price: number
+  lastUpdate: number
+}[]
 
 const props = defineProps({
-  data: Array,
-});
-const router = useRouter();
-const goToItemDetail = (id) => {
-  router.push(`/product_list/item_detail/${id}`);
-};
+  data: Array as PropType<ProductItemProps>,
+})
+const router = useRouter()
+const goToItemDetail = (_id: string) => {
+  router.push(`/products/detail/${_id}`)
+}
 </script>
 
 <template>
-  <div class="mt-5">
-    <Breadcrumb />
-  </div>
   <div class="notification">
     <div class="accordion" id="accordionExample">
       <Accordion :hasShow="true">
@@ -35,8 +34,8 @@ const goToItemDetail = (id) => {
     </div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div v-for="item in props.data" :key="item">
-      <div class="product-item" @click="goToItemDetail(item.id)">
+    <div v-for="item in props.data" :key="item._id">
+      <div class="product-item" @click="goToItemDetail(item._id)">
         <ProductItem :data="item" />
       </div>
     </div>
