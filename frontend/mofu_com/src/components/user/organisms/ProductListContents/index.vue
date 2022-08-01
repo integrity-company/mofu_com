@@ -3,6 +3,7 @@ import ProductItem from '../../molecules/ProductItem/index.vue'
 import Accordion from '../../molecules/Accordion/index.vue'
 import { useRouter } from 'vue-router'
 import { PropType } from 'vue'
+import { constants } from '../../../../js/constants'
 
 type ProductItemProps = {
   _id: string
@@ -18,7 +19,12 @@ const props = defineProps({
 })
 const router = useRouter()
 const goToItemDetail = (_id: string) => {
-  router.push(`/products/detail/${_id}`)
+  router.push({
+    name: constants.LOCATION.ROUTE_NAME.ITEM_DETAIL,
+    params: {
+      id: _id,
+    },
+  })
 }
 </script>
 
@@ -35,6 +41,7 @@ const goToItemDetail = (_id: string) => {
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div v-for="item in props.data" :key="item._id">
+      {{ item._id }}
       <div class="product-item" @click="goToItemDetail(item._id)">
         <ProductItem :data="item" />
       </div>
