@@ -4,7 +4,6 @@
 .product_favorite {
   width: 40px;
   height: 100%;
-  margin-left: 22px;
   border: solid 1px #e5e5e5;
   border-radius: 2px;
   cursor: pointer;
@@ -13,12 +12,12 @@
   color: #fe4c50;
 }
 .product_favorite::after {
-  font-family: "FontAwesome";
-  content: "\f08a";
+  font-family: 'FontAwesome';
+  content: '\f08a';
   font-size: 14px;
 }
 .product_favorite.active::after {
-  content: "\f004";
+  content: '\f004';
   color: #fe4c50;
 }
 </style>

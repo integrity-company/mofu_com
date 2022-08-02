@@ -1,15 +1,29 @@
 <script setup lang="ts">
-import ImageBox from "../../atoms/ImageBox/index.vue";
-import QuantitySelector from "../../atoms/QuantitySelector/index.vue";
-import Button from "../../atoms/Button/index.vue";
-import FavoriteButton from "../../atoms/favoriteButton/index.vue";
-import Seperate from "../../atoms/Seperate/index.vue";
-import SlideBanner from "../../atoms/SlideBanner/index.vue";
-import Footer from "../../molecules/Footer/index.vue";
+import ImageBox from '../../atoms/ImageBox/index.vue'
+import QuantitySelector from '../../atoms/QuantitySelector/index.vue'
+import Button from '../../atoms/Button/index.vue'
+import FavoriteButton from '../../atoms/favoriteButton/index.vue'
+import Seperate from '../../atoms/Seperate/index.vue'
+import SlideBanner from '../../atoms/SlideBanner/index.vue'
+import Footer from '../../molecules/Footer/index.vue'
+import { PropType } from 'vue'
+import { ProductList } from '../../../../js/type/user/general/products'
+
+type ItemInfomationEdmis = {
+  (e: 'showModal', value: string): void
+}
 
 const props = defineProps({
-  data: Object,
-});
+  data: {
+    type: Object as PropType<ProductList>,
+    required: true,
+  },
+})
+const emit = defineEmits<ItemInfomationEdmis>()
+
+const showModal = (itemId: string) => {
+  emit('showModal', itemId)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -23,8 +37,8 @@ const props = defineProps({
 }
 .quantity {
   width: 100%;
-  height: 40px;
   margin-top: 23px;
+  row-gap: 16px;
 }
 .seperate {
   margin: 64px 0px;
@@ -42,12 +56,10 @@ const props = defineProps({
       <div class="product_price">
         <p>¥{{ props.data.price }}</p>
       </div>
-      <div class="quantity d-flex">
+      <div class="quantity d-flex flex-column">
         <QuantitySelector />
-        <Button>add to cart</Button>
-        <div>
-          <FavoriteButton />
-        </div>
+        <Button @click="showModal(props.data._id)">add to cart</Button>
+        <FavoriteButton />
       </div>
     </div>
   </div>

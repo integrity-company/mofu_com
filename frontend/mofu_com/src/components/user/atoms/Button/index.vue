@@ -3,7 +3,6 @@
 <style lang="scss" scoped>
 .add_to_cart_button {
   width: 100%;
-  margin-left: 19px;
   font-size: 12px !important;
 }
 .red_button {
@@ -41,7 +40,11 @@
 </style>
 
 <template>
-  <div class="red_button add_to_cart_button">
+  <div
+    class="red_button add_to_cart_button"
+    data-bs-toggle="modal"
+    data-bs-target="#modal"
+  >
     <a href="#"><slot /></a>
   </div>
 </template>
