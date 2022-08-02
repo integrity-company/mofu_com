@@ -1,7 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Button from '../../atoms/Button/index.vue'
+</script>
 
 <template>
-  <div class="modal" tabindex="-1">
+  <div
+    class="modal fade"
+    id="modal"
+    tabindex="-1"
+    aria-labelledby="modalLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -21,16 +29,9 @@
           </p>
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            <slot name="secondary-btn" />
-          </button>
-          <button type="button" class="btn btn-primary">
+          <Button data-bs-dismiss="modal" @click="$emit('primary')">
             <slot name="primary-btn" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>

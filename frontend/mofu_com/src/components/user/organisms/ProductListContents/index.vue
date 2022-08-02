@@ -41,7 +41,6 @@ const goToItemDetail = (_id: string) => {
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div v-for="item in props.data" :key="item._id">
-      {{ item._id }}
       <div class="product-item" @click="goToItemDetail(item._id)">
         <ProductItem :data="item" />
       </div>
